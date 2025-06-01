@@ -1,5 +1,5 @@
 .full-width {
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -15,4 +15,72 @@
   /* max-width: 1200px; optional: limit max width of the list */
   width: 100%;
   padding: 0 1rem;
+}
+
+.question-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+
+}
+
+.question-text {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 2rem;
+}
+
+.input-group,
+.single-correct-group,
+.multiple-correct-group {
+  display: flex;
+  gap: 8px;
+  width: 90%;
+}
+
+.single-correct-group,
+.multiple-correct-group {
+  flex-direction: column;
+}
+
+.input-group .MuiTextField-root {
+  flex: 1;
+}
+
+.input-group .MuiButton-root {
+  flex-shrink: 0;
+  min-width: 100px;
+}
+
+.input-field {
+  flex: 1;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  border: none;
+  border-bottom: 2px solid #67e8f9;
+  background: transparent;
+
+}
+
+.input-field:focus {
+  outline: none;
+  border-bottom-color: #22d3ee;
+}
+
+.submit-button {
+  font-size: 1.1rem;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #67e8f9;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-button:hover {
+  background: #22d3ee;
+  color: #0f172a;
 }
