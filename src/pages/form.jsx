@@ -10,7 +10,7 @@ export default function Form() {
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
-    const [openRespondantInformation, setOpenRespondentInformation] = useState(false);
+    const [openRespondentInformation, setOpenRespondentInformation] = useState(false);
     const [username, setUsername] = useState("");
     const [userID, setUserID] = useState("");
     useEffect(() => {
@@ -30,7 +30,7 @@ export default function Form() {
 
     return (
         <div className="full-width">
-            {openRespondantInformation == false && formData && (
+            {openRespondentInformation == false && formData && (
                 <div className="respondant-information-container">
                     <FormCoverComponent
                         title={title}
@@ -39,7 +39,7 @@ export default function Form() {
                     />
                 </div>
             )}
-            {openRespondantInformation && formData && (
+            {openRespondentInformation && formData && (
                 <RespondentInformationComponent
                     question="May I know your name and ID"
                     onSubmitResponse={(response) => {

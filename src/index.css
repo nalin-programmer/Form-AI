@@ -1,3 +1,11 @@
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .full-width {
   width: 100%;
   min-height: 100vh;
@@ -22,7 +30,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: calc(100vh - 64px);
   text-align: center;
 
 }

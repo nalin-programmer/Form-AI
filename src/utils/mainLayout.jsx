@@ -4,13 +4,14 @@ import Header from "./header";
 
 const MainLayout = ({ children }) => {
     return (
-        <>
-            <Header />
-            <div style={{ paddingTop: "64px" }}>
+        <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
+            <Header style={{ height: "64px", flexShrink: 0 }} />
+            <main style={{ flex: 1, overflow: "auto" }}>
                 {children}
-            </div>
-        </>
+            </main>
+        </div>
     );
 };
+
 
 export default MainLayout;
