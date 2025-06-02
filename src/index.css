@@ -84,3 +84,18 @@
   background: #22d3ee;
   color: #0f172a;
 }
+
+.form-cover-title {
+  font-size: 4rem;
+  color: #0f172a;
+  margin-bottom: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-cover-description {
+  font-size: 3rem;
+  color: #9ca3af;
+  margin-bottom: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+}
