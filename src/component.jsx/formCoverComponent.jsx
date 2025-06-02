@@ -1,7 +1,8 @@
+import { Button } from '@mui/material';
 import React, { useState } from 'react'
 import { ReactTyped } from 'react-typed';
 
-export default function FormCoverComponent({ title, description }) {
+export default function FormCoverComponent({ title, description, handleSubmit }) {
     const [showInput, setShowInput] = useState(false);
     return (
         <div className="question-container">
@@ -12,7 +13,11 @@ export default function FormCoverComponent({ title, description }) {
                 showCursor={false}
                 onComplete={() => setShowInput(true)}
             />
-            {showInput && <p className='form-cover-description'>{description}</p>}
+            {showInput && <div>
+                <p className='form-cover-description'>{description}</p>
+                <Button variant="contained" onClick={handleSubmit} sx={{ mt: 2 }}>
+                    Start
+                </Button></div>}
         </div>
     )
 }

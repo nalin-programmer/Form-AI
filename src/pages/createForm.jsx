@@ -6,9 +6,7 @@ import RespondentInformationComponent from '../component.jsx/respondantInformati
 export default function CreateForm() {
   return (
     <div className="full-width">
-      <RespondentInformationComponent question="May I know your name and ID" onSubmitResponse={() => console.log("response")} />
-      {/* <FormCoverComponent title="Form Cover Title" description="This is the form cover description." /> */}
-      {/* <QuestionComponent question="What is your name?" response_type="multiple_correct" options={["Apple", "Banana", "Orange"]} onSubmitResponse={(response) => console.log(response)} /> */}
+      <QuestionComponent question="What is your name?" response_type="multiple_correct" options={["Apple", "Banana", "Orange"]} onSubmitResponse={(response) => console.log(response)} />
     </div>
   )
 }
