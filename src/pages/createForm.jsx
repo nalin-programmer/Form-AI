@@ -1,7 +1,7 @@
 import React from 'react'
 import QuestionComponent from '../component.jsx/questionComponent'
 import FormCoverComponent from '../component.jsx/formCoverComponent'
-import RespondentInformationComponent from '../component.jsx/respondantInformationComponent'
+import RespondentInformationComponent from '../component.jsx/respondentInformationComponent'
 
 export default function CreateForm() {
   return (

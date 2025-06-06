@@ -70,7 +70,7 @@ const QuestionComponent = ({ question, response_type, options = [], onSubmitResp
                             onChange={handleTextChange}
                             fullWidth
                         />
-                        <Button variant="contained" onClick={handleSubmit} sx={{ mt: 2 }}>
+                        <Button variant="contained" onClick={() => handleSubmit(textResponse)} sx={{ mt: 2 }}>
                             Submit
                         </Button>
                     </div>
@@ -90,7 +90,7 @@ const QuestionComponent = ({ question, response_type, options = [], onSubmitResp
                                 ))}
                             </RadioGroup>
                         </FormControl>
-                        <Button variant="contained" onClick={handleSubmit} sx={{ mt: 2 }}>
+                        <Button variant="contained" onClick={() => handleSubmit(singleResponse)} sx={{ mt: 2 }}>
                             Submit
                         </Button>
                     </div>
@@ -116,7 +116,7 @@ const QuestionComponent = ({ question, response_type, options = [], onSubmitResp
                                 ))}
                             </FormGroup>
                         </FormControl>
-                        <Button variant="contained" onClick={handleSubmit} sx={{ mt: 2 }}>
+                        <Button variant="contained" onClick={() => handleSubmit(multipleResponse)} sx={{ mt: 2 }}>
                             Submit
                         </Button>
                     </div>

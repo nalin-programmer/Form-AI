@@ -38,7 +38,7 @@ export default function RespondentInformationComponent({ question, onSubmitRespo
                         onChange={handleUserIDTextChange}
                         fullWidth
                     />
-                    <Button variant="contained" onClick={onSubmitResponse} sx={{ mt: 2 }}>
+                    <Button variant="contained" onClick={() => onSubmitResponse(userNameResponse, userIDResponse)} sx={{ mt: 2 }}>
                         Submit
                     </Button>
                 </div>
