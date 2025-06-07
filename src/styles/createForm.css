@@ -1,0 +1,23 @@
+.create-form-layout {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.create-form-left {
+    width: 33.33vw;
+    height: 100vh;
+    overflow-y: auto;
+    background: #f3f4f6;
+    /* light gray */
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.create-form-right {
+    width: 66.66vw;
+    height: 100vh;
+    overflow: hidden;
+    padding: 2rem;
+    box-sizing: border-box;
+}

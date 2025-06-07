@@ -1,12 +1,20 @@
 import React from 'react'
-import QuestionComponent from '../component.jsx/questionComponent'
-import FormCoverComponent from '../component.jsx/formCoverComponent'
-import RespondentInformationComponent from '../component.jsx/respondentInformationComponent'
+import QuestionComponent from '../components/questionComponent'
+import FormCoverComponent from '../components/formCoverComponent'
+import RespondentInformationComponent from '../components/respondentInformationComponent'
+import "../styles/createForm.css";
 
 export default function CreateForm() {
   return (
-    <div className="full-width">
-      <QuestionComponent question="What is your name?" response_type="multiple_correct" options={["Apple", "Banana", "Orange"]} onSubmitResponse={(response) => console.log(response)} />
+    <div className="create-form-layout">
+      {/* Left: scrollable */}
+      <div className="create-form-left">
+        {/* Place scrollable content here */}
+      </div>
+      {/* Right: fixed, non-scrollable */}
+      <div className="create-form-right">
+
+      </div>
     </div>
   )
 }

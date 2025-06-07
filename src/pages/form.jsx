@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { createResponse, fetchForm } from '../api/respondentForm.api';
-import FormCoverComponent from '../component.jsx/formCoverComponent';
-import RespondentInformationComponent from '../component.jsx/respondentInformationComponent';
-import QuestionComponent from '../component.jsx/questionComponent';
+import FormCoverComponent from '../components/formCoverComponent';
+import RespondentInformationComponent from '../components/respondentInformationComponent';
+import QuestionComponent from '../components/questionComponent';
 import { updateResponse } from '../api/respondentForm.api';
-import FormFilledComponent from '../component.jsx/formFilledComponent';
+import FormFilledComponent from '../components/formFilledComponent';
 import Snackbar from '@mui/material/Snackbar'
 import Alert from '@mui/material/Alert'
+import '../styles/form.css';
 
 export default function Form() {
     const { formId } = useParams();

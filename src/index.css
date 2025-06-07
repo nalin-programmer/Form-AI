@@ -1,3 +1,7 @@
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */
+
 html,
 body,
 #root {
@@ -12,101 +16,4 @@ body,
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-.form-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  /* space between cards */
-  margin: 2rem auto;
-  /* max-width: 1200px; optional: limit max width of the list */
-  width: 100%;
-  padding: 0 1rem;
-}
-
-.question-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 64px);
-  text-align: center;
-
-}
-
-.question-text {
-  font-size: 2rem;
-  color: #0f172a;
-  margin-bottom: 1rem;
-  font-style: italic;
-  font-weight: 500;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.input-group,
-.single-correct-group,
-.multiple-correct-group {
-  display: flex;
-  gap: 8px;
-  width: 90%;
-}
-
-.single-correct-group,
-.multiple-correct-group {
-  flex-direction: column;
-}
-
-.input-group .MuiTextField-root {
-  flex: 1;
-}
-
-.input-group .MuiButton-root {
-  flex-shrink: 0;
-  min-width: 100px;
-}
-
-.input-field {
-  flex: 1;
-  font-size: 1.5rem;
-  padding: 10px 15px;
-  border: none;
-  border-bottom: 2px solid #67e8f9;
-  background: transparent;
-
-}
-
-.input-field:focus {
-  outline: none;
-  border-bottom-color: #22d3ee;
-}
-
-.submit-button {
-  font-size: 1.1rem;
-  padding: 10px 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid #67e8f9;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.submit-button:hover {
-  background: #22d3ee;
-  color: #0f172a;
-}
-
-.form-cover-title {
-  font-size: 4rem;
-  color: #0f172a;
-  margin-bottom: 1rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.form-cover-description {
-  font-size: 3rem;
-  color: #9ca3af;
-  margin-bottom: 1rem;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-style: italic;
 }

@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import FormComponent from '../component.jsx/formComponent'
-import AddForm from '../component.jsx/addFormComponent'
+import FormComponent from '../components/formComponent'
+import AddForm from '../components/addFormComponent'
 import { fetchForms } from '../api/adminForm.api'
 import { deleteForm } from '../api/adminForm.api';
+import '../styles/dashboard.css';
 
 export default function Dashboard() {
     const [forms, setForms] = useState([]);
