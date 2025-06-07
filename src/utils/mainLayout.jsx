@@ -6,12 +6,11 @@ const MainLayout = ({ children }) => {
     return (
         <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
             <Header style={{ height: "64px", flexShrink: 0 }} />
-            <main style={{ flex: 1, overflow: "auto" }}>
+            <main style={{ flex: 1, overflow: "auto", paddingTop: "64px" }}>
                 {children}
             </main>
         </div>
     );
 };
-
 
 export default MainLayout;

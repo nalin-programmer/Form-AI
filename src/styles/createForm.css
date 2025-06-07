@@ -21,3 +21,25 @@
     padding: 2rem;
     box-sizing: border-box;
 }
+
+.form-component-list-item {
+    color: whitesmoke;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: #1e293b;
+    /* dark gray */
+}
+
+.create-form-list-heading {
+    flex-grow: 1;
+    color: #0f172a;
+    /* dark blue-gray */
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-style: italic;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.question-button-group {
+    padding-top: 1rem;
+}
