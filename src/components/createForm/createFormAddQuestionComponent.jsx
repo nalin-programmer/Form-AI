@@ -6,8 +6,11 @@ import DeleteIcon from '@mui/icons-material/Delete'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import AddIcon from '@mui/icons-material/Add'
 
-export default function CreateFormAddQuestionComponent({ questionsList, setQuestionsList }) {
-    const [expanded, setExpanded] = useState(false)
+export default function CreateFormAddQuestionComponent({
+    questionsList, setQuestionsList,
+    expanded, handleAccordionChange
+}) {
+    const [qaExpand, setQaExpand] = useState(false)
     const fileInputRefs = useRef({})
 
     // Add a new question
@@ -22,7 +25,7 @@ export default function CreateFormAddQuestionComponent({ questionsList, setQuest
             newQuestion.options = [''] // Initialize with one empty option
         }
         setQuestionsList([...questionsList, newQuestion])
-        setExpanded(questionsList.length) // expand the new one
+        setQaExpand(questionsList.length) // expand the new one
     }
 
     // Delete a question
@@ -73,7 +76,7 @@ export default function CreateFormAddQuestionComponent({ questionsList, setQuest
 
     // Save button (could be used to trigger validation or API call)
     const handleSave = () => {
-        setExpanded(false)
+        setQaExpand(false)
     }
 
     return (
@@ -82,10 +85,14 @@ export default function CreateFormAddQuestionComponent({ questionsList, setQuest
                 {questionsList.map((q, idx) => (
                     <Accordion
                         key={q.question_no}
-                        expanded={expanded === idx}
-                        onChange={() => setExpanded(expanded === idx ? false : idx)}
+                        qaExpand={qaExpand === idx}
+                        onChange={() => {
+                            setQaExpand(qaExpand === idx ? false : idx);
+                            handleAccordionChange(`question-${idx}`);
+                        }}
                         className="form-component-list-item"
                         sx={{ background: '#fff', color: '#222' }}
+                        expanded={expanded === `question-${idx}`}
                     >
                         <AccordionSummary
                             expandIcon={<ExpandMoreIcon />}

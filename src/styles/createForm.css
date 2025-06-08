@@ -49,3 +49,14 @@
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+
+.create-form-button,
+.create-form-button-container {
+    width: 100%;
+}
+
+.create-form-button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}

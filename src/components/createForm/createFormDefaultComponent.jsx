@@ -9,7 +9,8 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 export default function CreateFormDefaultComponent({
     title, description, setTitle, setDescription,
     WelcomePageImage, setWelcomePageImage,
-    PersonalInformationImage, setPersonalInformationImage
+    PersonalInformationImage, setPersonalInformationImage,
+    expanded, handleAccordionChange
 }) {
     const welcomeFileInputRef = useRef(null)
     const personalFileInputRef = useRef(null)
@@ -28,7 +29,7 @@ export default function CreateFormDefaultComponent({
 
     return (
         <>
-            <Accordion>
+            <Accordion expanded={expanded === 'welcome'} onChange={() => handleAccordionChange('welcome')}>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel-content"
@@ -93,7 +94,7 @@ export default function CreateFormDefaultComponent({
                     </Button>
                 </AccordionDetails>
             </Accordion>
-            <Accordion >
+            <Accordion expanded={expanded === 'personal'} onChange={() => handleAccordionChange('personal')}>
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
                     aria-controls="panel-content"

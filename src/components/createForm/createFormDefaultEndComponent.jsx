@@ -5,7 +5,10 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import Button from '@mui/material/Button'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 
-export default function CreateFormDefaultEndComponent({ ThankYouPageImage, setThankYouPageImage }) {
+export default function CreateFormDefaultEndComponent({
+    ThankYouPageImage, setThankYouPageImage,
+    expanded, handleAccordionChange
+}) {
 
     const fileInputRef = useRef(null)
     const handleThankYouImageChange = (e) => {
@@ -15,7 +18,7 @@ export default function CreateFormDefaultEndComponent({ ThankYouPageImage, setTh
     }
 
     return (
-        <Accordion>
+        <Accordion expanded={expanded === 'thankyou'} onChange={() => handleAccordionChange('thankyou')}>
             <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel-content"

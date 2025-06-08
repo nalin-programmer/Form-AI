@@ -16,6 +16,28 @@ export async function fetchForms() {
     }
 }
 
+export async function createForm(formData) {
+    try {
+        const baseUrl = import.meta.env.VITE_API_BASE_URL;
+        if (!baseUrl) {
+            throw new Error('API base URL is not defined');
+        }
+        const response = await fetch(`${baseUrl}/forms`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                accept: 'application/json',
+            },
+            body: JSON.stringify(formData),
+        });
+        if (!response.ok) throw new Error('Failed to create form');
+        return response.json();
+    } catch (error) {
+        console.error('Error creating form:', error);
+        throw error; // Re-throw the error to be handled by the caller
+    }
+}
+
 export async function deleteForm(formId) {
     try {
         const baseUrl = import.meta.env.VITE_API_BASE_URL;
