@@ -6,9 +6,13 @@ import TextField from '@mui/material/TextField'
 import Button from '@mui/material/Button'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 
-export default function CreateFormDefaultComponent({ title, description, setTitle, setDescription, WelcomePageImage, setWelcomePageImage, PersonalInformationImage, setPersonalInformationImage }) {
-
-    const fileInputRef = useRef(null)
+export default function CreateFormDefaultComponent({
+    title, description, setTitle, setDescription,
+    WelcomePageImage, setWelcomePageImage,
+    PersonalInformationImage, setPersonalInformationImage
+}) {
+    const welcomeFileInputRef = useRef(null)
+    const personalFileInputRef = useRef(null)
 
     const handleWelcomeImageChange = (e) => {
         if (e.target.files && e.target.files[0]) {
@@ -61,7 +65,7 @@ export default function CreateFormDefaultComponent({ title, description, setTitl
                         <Button
                             variant="outlined"
                             component="span"
-                            onClick={() => fileInputRef.current.click()}
+                            onClick={() => welcomeFileInputRef.current.click()}
                             fullWidth
                         >
                             {WelcomePageImage ? "Change Background Image" : "Add Background Image"}
@@ -69,7 +73,7 @@ export default function CreateFormDefaultComponent({ title, description, setTitl
                         <input
                             type="file"
                             accept="image/*"
-                            ref={fileInputRef}
+                            ref={welcomeFileInputRef}
                             style={{ display: 'none' }}
                             onChange={handleWelcomeImageChange}
                         />
@@ -124,7 +128,7 @@ export default function CreateFormDefaultComponent({ title, description, setTitl
                         <Button
                             variant="outlined"
                             component="span"
-                            onClick={() => fileInputRef.current.click()}
+                            onClick={() => personalFileInputRef.current.click()}
                             fullWidth
                         >
                             {PersonalInformationImage ? "Change Background Image" : "Add Background Image"}
@@ -132,7 +136,7 @@ export default function CreateFormDefaultComponent({ title, description, setTitl
                         <input
                             type="file"
                             accept="image/*"
-                            ref={fileInputRef}
+                            ref={personalFileInputRef}
                             style={{ display: 'none' }}
                             onChange={handlePersonalImageChange}
                         />

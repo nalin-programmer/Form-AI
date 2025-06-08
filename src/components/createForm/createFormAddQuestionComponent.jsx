@@ -195,7 +195,6 @@ export default function CreateFormAddQuestionComponent({ questionsList, setQuest
                 aria-label="question type button group"
                 className="question-button-group"
                 fullWidth
-                style={{ marginTop: '1rem' }}
             >
                 <Button onClick={() => handleAddQuestion('text')}>TEXT</Button>
                 <Button onClick={() => handleAddQuestion('single_correct')}>RADIO</Button>

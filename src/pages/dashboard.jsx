@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import FormComponent from '../components/formComponent'
-import AddForm from '../components/addFormComponent'
+import FormComponent from '../components/dashboard/formComponent'
+import AddForm from '../components/dashboard/addFormComponent'
 import { fetchForms } from '../api/adminForm.api'
 import { deleteForm } from '../api/adminForm.api';
 import '../styles/dashboard.css';

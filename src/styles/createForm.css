@@ -40,7 +40,12 @@
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.question-button-group,
+
 .question-list {
     padding-top: 1rem;
+}
+
+.question-button-group {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
