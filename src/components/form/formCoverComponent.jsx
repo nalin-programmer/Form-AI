@@ -2,9 +2,12 @@ import { Button } from '@mui/material';
 import React, { useState, useRef } from 'react'
 import { ReactTyped } from 'react-typed';
 
-export default function FormCoverComponent({ title, description, handleSubmit }) {
+export default function FormCoverComponent({ title, description, handleSubmit, backgroundImage }) {
     const [showInput, setShowInput] = useState(false);
     const buttonRef = useRef(null);
+    if (backgroundImage) {
+        // Apply the background image to the form container
+    }
 
     // useEffect(() => {
     //     if (showInput) {

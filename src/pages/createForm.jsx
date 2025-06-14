@@ -29,7 +29,7 @@ export default function CreateForm() {
       title,
       description,
       questions: questionsList,
-      backgroundImages: {
+      background_images: {
         welcome: WelcomePageImage,
         personal_information: PersonalInformationImage,
         thank_you: ThankYouPageImage

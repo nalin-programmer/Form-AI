@@ -55,3 +55,22 @@ export async function deleteForm(formId) {
         throw error; // Re-throw the error to be handled by the caller
     }
 }
+export async function fetchFormResponsesById(formId) {
+    try {
+        const baseUrl = import.meta.env.VITE_API_BASE_URL;
+        if (!baseUrl) {
+            throw new Error('API base URL is not defined');
+        }
+        const response = await fetch(`${baseUrl}/responses/${formId}`, {
+            headers: { accept: 'application/json' },
+        });
+        if (response.status === 404) {
+            throw new Error('Form not found');
+        }
+        if (!response.ok) throw new Error('Failed to fetch form responses');
+        return response.json();
+    } catch (error) {
+        console.error('Error fetching form responses:', error);
+        throw error; // Re-throw the error to be handled by the caller
+    }
+}

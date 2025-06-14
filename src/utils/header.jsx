@@ -29,7 +29,7 @@ function Header() {
         if (page) {
 
             if (page === 'Create Form') {
-                navigate('/forms/create');
+                navigate('/form/create');
             } else if (page === 'About') {
                 navigate('/about');
             } else if (page === 'Contact Us') {
