@@ -4,6 +4,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import { Divider } from '@mui/material';
 
 export default function ResponseTable({ responses = [], questionMap }) {
 
@@ -18,7 +19,7 @@ export default function ResponseTable({ responses = [], questionMap }) {
                     >
                         <Typography component="span"><b>{responseObj.respondent_name}</b>(<i>{responseObj.respondent_id}</i>)</Typography>
                     </AccordionSummary>
-
+                    <Divider variant="middle" />
                     <AccordionDetails>
                         {Object.entries(responseObj.response).map(([idx, response]) => {
                             return (

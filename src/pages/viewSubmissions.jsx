@@ -4,6 +4,7 @@ import '../styles/viewSubmissions.css';
 import BasicLineChart from '../components/viewSubmissions/basicLineChart';
 import { fetchFormResponsesById } from '../api/adminForm.api';
 import ResponseTable from '../components/viewSubmissions/responseTable';
+import DownloadResponse from '../components/viewSubmissions/downloadResponse';
 
 export default function ViewSubmissions() {
     const { formId } = useParams();
@@ -29,6 +30,7 @@ export default function ViewSubmissions() {
             {form && (<><h2><i>{form.title}</i></h2>
                 <p>{form.description}</p>
                 <BasicLineChart graphData={graphData} />
+                <DownloadResponse questionMap={questionMap} responses={responses} />
                 <ResponseTable responses={responses} form={form} questionMap={questionMap} />
             </>)}
 

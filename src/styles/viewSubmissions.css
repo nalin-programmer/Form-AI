@@ -5,6 +5,7 @@
     padding-top: 20px;
     width: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-bottom: 2rem;
 }
 
 .response-table-container,
@@ -18,4 +19,12 @@
 .response-accordion-que {
     font-weight: 500;
     font-style: italic;
+}
+
+.download-response-button {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 40px;
 }
