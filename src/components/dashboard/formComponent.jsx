@@ -56,7 +56,7 @@ export default function FormComponent({ form, handleDelete }) {
                 </AccordionSummary>
                 <AccordionDetails>
                     {form.description}
-                    <Typography component="span" sx={{ color: 'gray', fontStyle: 'italic', float: 'right', marginRight: '16px' }}>
+                    <Typography component="span" sx={{ color: 'gray', fontStyle: 'italic', float: 'right', marginRight: '16px', paddingTop: '12px' }}>
                         Created at: {new Date(form.created_at).toLocaleString()}
                     </Typography>
                 </AccordionDetails>
