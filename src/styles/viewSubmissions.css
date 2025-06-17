@@ -4,7 +4,7 @@
     align-items: center;
     padding-top: 20px;
     width: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--form-font-family);
     padding-bottom: 2rem;
 }
 
@@ -13,7 +13,7 @@
     width: 100%;
     max-width: 800px;
     margin: 0 auto;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--form-font-family);
 }
 
 .response-accordion-que {

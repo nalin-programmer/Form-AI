@@ -37,7 +37,7 @@
     font-size: 1.5rem;
     font-weight: 600;
     font-style: italic;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--form-font-family);
 }
 
 

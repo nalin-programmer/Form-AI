@@ -68,3 +68,26 @@ export async function updateResponse(responseId, questionId, answer) {
         throw error;
     }
 }
+
+
+export async function fetchAnalytics(formId) {
+    try {
+        const baseUrl = import.meta.env.VITE_API_BASE_URL;
+        if (!baseUrl) {
+            throw new Error('API base URL is not defined');
+        }
+        const response = await fetch(`${baseUrl}/responses/analytics/${formId}`);
+        if (response.status === 404) {
+            console.error('Analysis not found');
+            throw new Error('Analysis not found');
+        }
+        if (!response.ok) {
+            console.error('Error fetching analysis:', response.statusText);
+            throw new Error('Failed to fetch analysis');
+        }
+        return response.json();
+    } catch (error) {
+        console.error('Error fetching form:', error);
+        throw error;
+    }
+}

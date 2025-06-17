@@ -14,7 +14,7 @@
     margin-bottom: 1rem;
     font-style: italic;
     font-weight: 500;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--form-font-family);
 }
 
 .input-group,
@@ -73,13 +73,13 @@
     font-size: 4rem;
     color: #0f172a;
     margin-bottom: 1rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--form-font-family);
 }
 
 .form-cover-description {
     font-size: 3rem;
     color: #9ca3af;
     margin-bottom: 1rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--form-font-family);
     font-style: italic;
 }

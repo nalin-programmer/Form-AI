@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import '../styles/viewSubmissions.css';
-import BasicLineChart from '../components/viewSubmissions/basicLineChart';
+import BasicLineChart from '../components/viewSubmissions/BasicLineChart';
 import { fetchFormResponsesById } from '../api/adminForm.api';
 import ResponseTable from '../components/viewSubmissions/responseTable';
 import DownloadResponse from '../components/viewSubmissions/downloadResponse';

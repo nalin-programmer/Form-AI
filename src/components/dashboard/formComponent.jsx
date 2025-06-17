@@ -80,13 +80,14 @@ export default function FormComponent({ form, handleDelete }) {
                         title="View Analytics"
                         sx={{ minWidth: 0, padding: '6px 8px' }}
                         color='success'
+                        onClick={() => window.open(`/form/${form._id}/analytics`)}
                     ></Button>
                     <Button
                         startIcon={<AssignmentTurnedInIcon />}
                         title="View Submissions"
                         sx={{ minWidth: 0, padding: '6px 8px' }}
                         color='warning'
-                        onClick={() => window.open(`/form/${form._id}/responses`, '_blank')}
+                        onClick={() => window.open(`/form/${form._id}/responses`)}
                     ></Button>
                     <Button
                         startIcon={<DeleteIcon />}
