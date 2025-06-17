@@ -10,8 +10,13 @@ import FormFilledComponent from '../components/form/formFilledComponent'
 import NoteAddIcon from '@mui/icons-material/NoteAdd'
 import { Button } from '@mui/material'
 import { createForm } from '../api/adminForm.api';
+import { useNavigate } from 'react-router-dom';
+import Snackbar from '@mui/material/Snackbar'
+import Alert from '@mui/material/Alert'
 
 export default function CreateForm() {
+  const navigate = useNavigate();
+
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [WelcomePageImage, setWelcomePageImage] = useState(null)
@@ -19,6 +24,7 @@ export default function CreateForm() {
   const [ThankYouPageImage, setThankYouPageImage] = useState(null)
   const [questionsList, setQuestionsList] = useState([])
   const [expanded, setExpanded] = useState('welcome') // Track which accordion is open
+  const [toast, setToast] = useState({ open: false, message: '', severity: 'success' })
 
   const handleAccordionChange = (panel) => {
     setExpanded(prev => (prev === panel ? "none" : panel));
@@ -36,7 +42,14 @@ export default function CreateForm() {
       }
     };
 
-    await createForm(payload);
+    try {
+      await createForm(payload);
+      setToast({ open: true, message: 'Form created successfully!', severity: 'success' });
+      setTimeout(() => navigate("/"), 1500); // Navigate after showing toast
+    } catch (error) {
+      console.log(`error creating form: ${error}`)
+      setToast({ open: true, message: 'Failed to create form.', severity: 'error' });
+    }
   }
 
   return (
@@ -104,6 +117,16 @@ export default function CreateForm() {
           <FormFilledComponent />
         )}
       </div>
+      <Snackbar
+        open={toast.open}
+        autoHideDuration={3000}
+        onClose={() => setToast({ ...toast, open: false })}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      >
+        <Alert onClose={() => setToast({ ...toast, open: false })} severity={toast.severity} sx={{ width: '100%' }}>
+          {toast.message}
+        </Alert>
+      </Snackbar>
     </div>
   )
 }

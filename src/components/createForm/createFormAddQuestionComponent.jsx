@@ -75,9 +75,9 @@ export default function CreateFormAddQuestionComponent({
     }
 
     // Save button (could be used to trigger validation or API call)
-    const handleSave = () => {
-        setQaExpand(false)
-    }
+    // const handleSave = () => {
+    //     setQaExpand(false)
+    // }
 
     return (
         <div className='question-list'>
@@ -184,7 +184,7 @@ export default function CreateFormAddQuestionComponent({
                                     </div>
                                 )}
                             </div>
-                            <Button
+                            {/* <Button
                                 variant="contained"
                                 color="primary"
                                 sx={{ mt: 2 }}
@@ -192,7 +192,7 @@ export default function CreateFormAddQuestionComponent({
                                 onClick={() => handleSave(idx)}
                             >
                                 Save
-                            </Button>
+                            </Button> */}
                         </AccordionDetails>
                     </Accordion>
                 ))}

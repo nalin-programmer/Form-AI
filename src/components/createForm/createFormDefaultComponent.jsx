@@ -84,14 +84,14 @@ export default function CreateFormDefaultComponent({
                             </div>
                         )}
                     </div>
-                    <Button
+                    {/* <Button
                         variant="contained"
                         color="primary"
                         sx={{ mt: 2 }}
                         fullWidth
                     >
                         Save
-                    </Button>
+                    </Button> */}
                 </AccordionDetails>
             </Accordion>
             <Accordion expanded={expanded === 'personal'} onChange={() => handleAccordionChange('personal')}>
@@ -147,14 +147,14 @@ export default function CreateFormDefaultComponent({
                             </div>
                         )}
                     </div>
-                    <Button
+                    {/* <Button
                         variant="contained"
                         color="primary"
                         sx={{ mt: 2 }}
                         fullWidth
                     >
                         Save
-                    </Button>
+                    </Button> */}
                 </AccordionDetails>
 
             </Accordion>
