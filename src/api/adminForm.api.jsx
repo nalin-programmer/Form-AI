@@ -55,6 +55,7 @@ export async function deleteForm(formId) {
         throw error; // Re-throw the error to be handled by the caller
     }
 }
+
 export async function fetchFormResponsesById(formId) {
     try {
         const baseUrl = import.meta.env.VITE_API_BASE_URL;
@@ -72,5 +73,29 @@ export async function fetchFormResponsesById(formId) {
     } catch (error) {
         console.error('Error fetching form responses:', error);
         throw error; // Re-throw the error to be handled by the caller
+    }
+}
+
+export async function uploadBackgroundImages(payload) {
+    try {
+        const baseUrl = import.meta.env.VITE_API_BASE_URL;
+        if (!baseUrl) {
+            throw new Error('API base URL is not defined');
+        }
+
+        const response = await fetch(`${baseUrl}/files/upload`, {
+            method: 'POST',
+            headers: {
+                accept: 'application/json',
+                // Do not set Content-Type, browser will set it to multipart/form-data with boundary
+            },
+            body: payload,
+        });
+
+        if (!response.ok) throw new Error('Failed to upload background image');
+        return response.json();
+    } catch (error) {
+        console.error('Error uploading background image:', error);
+        throw error;
     }
 }

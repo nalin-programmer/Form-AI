@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react'
+import { uploadBackgroundImages } from '../../api/adminForm.api';
 import {
     Accordion, AccordionSummary, AccordionDetails, IconButton, TextField, Button, ButtonGroup
 } from '@mui/material'
@@ -8,7 +9,8 @@ import AddIcon from '@mui/icons-material/Add'
 
 export default function CreateFormAddQuestionComponent({
     questionsList, setQuestionsList,
-    expanded, handleAccordionChange
+    expanded, handleAccordionChange,
+    imageFolderId
 }) {
     const [qaExpand, setQaExpand] = useState(false)
     const fileInputRefs = useRef({})
@@ -64,15 +66,34 @@ export default function CreateFormAddQuestionComponent({
     }
 
     // Handle image upload
-    const handleImageChange = (idx, e) => {
+    // const handleImageChange = (idx, e) => {
+    //     if (e.target.files && e.target.files[0]) {
+    //         const reader = new FileReader()
+    //         reader.onload = (ev) => {
+    //             handleChange(idx, 'image', ev.target.result)
+    //         }
+    //         reader.readAsDataURL(e.target.files[0])
+    //     }
+    // }
+    const handleImageChange = async (idx, e) => {
         if (e.target.files && e.target.files[0]) {
-            const reader = new FileReader()
-            reader.onload = (ev) => {
-                handleChange(idx, 'image', ev.target.result)
+            const file = e.target.files[0];
+            const payload = new FormData();
+            payload.append('question_no', questionsList[idx].question_no);
+            payload.append('folder_id', imageFolderId); // Replace with actual folder_id if available
+            payload.append('page_type', 'question');
+            payload.append('file', file);
+
+            try {
+                const res = await uploadBackgroundImages(payload);
+                // Assuming res.url or res.path contains the image URL
+                handleChange(idx, 'image', import.meta.env.VITE_IMAGE_PREFIX + res.path);
+            } catch (error) {
+                // Optionally show a toast here
+                console.error('Image upload failed', error);
             }
-            reader.readAsDataURL(e.target.files[0])
         }
-    }
+    };
 
     // Save button (could be used to trigger validation or API call)
     // const handleSave = () => {

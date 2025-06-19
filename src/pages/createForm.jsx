@@ -13,10 +13,11 @@ import { createForm } from '../api/adminForm.api';
 import { useNavigate } from 'react-router-dom';
 import Snackbar from '@mui/material/Snackbar'
 import Alert from '@mui/material/Alert'
+import { v4 as uuidv4 } from 'uuid';
 
 export default function CreateForm() {
   const navigate = useNavigate();
-
+  const [imageFolderId, setImageFolderId] = useState(uuidv4());
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [WelcomePageImage, setWelcomePageImage] = useState(null)
@@ -67,18 +68,21 @@ export default function CreateForm() {
           setPersonalInformationImage={setPersonalInformationImage}
           expanded={expanded}
           handleAccordionChange={handleAccordionChange}
+          imageFolderId={imageFolderId}
         />
         <CreateFormAddQuestionComponent
           questionsList={questionsList}
           setQuestionsList={setQuestionsList}
           expanded={expanded}
           handleAccordionChange={handleAccordionChange}
+          imageFolderId={imageFolderId}
         />
         <CreateFormDefaultEndComponent
           ThankYouPageImage={ThankYouPageImage}
           setThankYouPageImage={setThankYouPageImage}
           expanded={expanded}
           handleAccordionChange={handleAccordionChange}
+          imageFolderId={imageFolderId}
         />
         <div className="create-form-button-container">
           <Button variant="contained" color="primary" startIcon={<NoteAddIcon />} className='create-form-button' onClick={handleCreateForm}>

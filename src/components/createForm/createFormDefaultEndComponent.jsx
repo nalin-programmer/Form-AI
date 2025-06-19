@@ -4,18 +4,39 @@ import AccordionSummary from '@mui/material/AccordionSummary'
 import AccordionDetails from '@mui/material/AccordionDetails'
 import Button from '@mui/material/Button'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
+import { uploadBackgroundImages } from '../../api/adminForm.api'
 
 export default function CreateFormDefaultEndComponent({
     ThankYouPageImage, setThankYouPageImage,
-    expanded, handleAccordionChange
+    expanded, handleAccordionChange,
+    imageFolderId
 }) {
 
     const fileInputRef = useRef(null)
-    const handleThankYouImageChange = (e) => {
+    // const handleThankYouImageChange = (e) => {
+    //     if (e.target.files && e.target.files[0]) {
+    //         setThankYouPageImage(URL.createObjectURL(e.target.files[0]))
+    //     }
+    // }
+
+    const handleThankYouImageChange = async (e) => {
         if (e.target.files && e.target.files[0]) {
-            setThankYouPageImage(URL.createObjectURL(e.target.files[0]))
+            const file = e.target.files[0];
+            const payload = new FormData();
+            payload.append('question_no', '0');
+            payload.append('folder_id', imageFolderId); // Replace as needed
+            payload.append('page_type', 'welcome_page');
+            payload.append('file', file);
+
+            try {
+                const res = await uploadBackgroundImages(payload);
+                setThankYouPageImage(import.meta.env.VITE_IMAGE_PREFIX + res.path);
+            } catch (error) {
+                // Optionally show a toast here
+                console.error('Image upload failed', error);
+            }
         }
-    }
+    };
 
     return (
         <Accordion expanded={expanded === 'thankyou'} onChange={() => handleAccordionChange('thankyou')}>
