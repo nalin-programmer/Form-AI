@@ -2,7 +2,7 @@ import { Button, TextField } from '@mui/material';
 import React, { useState } from 'react'
 import { ReactTyped } from 'react-typed';
 
-export default function RespondentInformationComponent({ question, onSubmitResponse }) {
+export default function RespondentInformationComponent({ question, onSubmitResponse, backgroundImageUrl }) {
     const [showInput, setShowInput] = useState(false);
     const [userNameResponse, setUserNameResponse] = useState("");
     const [userIDResponse, setUserIDResponse] = useState("");
@@ -14,7 +14,12 @@ export default function RespondentInformationComponent({ question, onSubmitRespo
         setUserIDResponse(e.target.value);
     };
     return (
-        <div className="question-container">
+        <div className="question-container"
+            style={{
+                backgroundImage: `url(${backgroundImageUrl})`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+            }}>
             <ReactTyped
                 className="question-text"
                 strings={[question || ""]}

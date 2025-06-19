@@ -97,8 +97,9 @@ export default function CreateForm() {
           <FormCoverComponent
             title={title}
             description={description}
-            image={WelcomePageImage}
+            // image={WelcomePageImage}
             handleSubmit={() => setExpanded('profile')}
+            backgroundImageUrl={WelcomePageImage}
           />
         )}
         {expanded.startsWith('question-') && (() => {
@@ -109,16 +110,18 @@ export default function CreateForm() {
               question={q.question}
               response_type={q.response_type}
               options={q.options}
+              backgroundImageUrl={q.image}
             />
           ) : null
         })()}
         {expanded === 'personal' && (
           <RespondentInformationComponent
             question="May I know your name and ID"
+            backgroundImageUrl={PersonalInformationImage}
           />
         )}
         {expanded === 'thankyou' && (
-          <FormFilledComponent />
+          <FormFilledComponent backgroundImageUrl={ThankYouPageImage} />
         )}
       </div>
       <Snackbar

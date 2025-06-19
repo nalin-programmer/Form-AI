@@ -2,12 +2,9 @@ import { Button } from '@mui/material';
 import React, { useState, useRef } from 'react'
 import { ReactTyped } from 'react-typed';
 
-export default function FormCoverComponent({ title, description, handleSubmit, backgroundImage }) {
+export default function FormCoverComponent({ title, description, handleSubmit, backgroundImageUrl }) {
     const [showInput, setShowInput] = useState(false);
     const buttonRef = useRef(null);
-    if (backgroundImage) {
-        // Apply the background image to the form container
-    }
 
     // useEffect(() => {
     //     if (showInput) {
@@ -16,7 +13,13 @@ export default function FormCoverComponent({ title, description, handleSubmit, b
     // }, [showInput]);
     return (
         <form onSubmit={(e) => { e.preventDefault(); handleSubmit(); }}>
-            <div className="question-container">
+            <div className="question-container"
+                style={{
+                    backgroundImage: `url(${backgroundImageUrl})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                }}
+            >
                 <ReactTyped
                     className="question-text form-cover-title"
                     strings={[title || ""]}

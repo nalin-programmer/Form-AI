@@ -12,11 +12,13 @@ import {
 } from "@mui/material";
 import { ReactTyped } from "react-typed";
 
-const QuestionComponent = ({ question, response_type, options = [], onSubmitResponse }) => {
+const QuestionComponent = ({ question, response_type, options = [], onSubmitResponse, backgroundImageUrl }) => {
+
     const [textResponse, setTextResponse] = useState("");
     const [singleResponse, setSingleResponse] = useState("");
     const [multipleResponse, setMultipleResponse] = useState([]);
     const [showInput, setShowInput] = useState(false);
+
     // Handlers
     const handleTextChange = (e) => {
         setTextResponse(e.target.value);
@@ -52,7 +54,18 @@ const QuestionComponent = ({ question, response_type, options = [], onSubmitResp
     };
 
     return (
-        <div className="question-container">
+        <div
+            className="question-container"
+            style={{
+                ...(backgroundImageUrl
+                    ? {
+                        backgroundImage: `url(${backgroundImageUrl})`,
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                    }
+                    : {}),
+            }}
+        >
             <ReactTyped
                 className="question-text"
                 strings={[question || ""]}
@@ -76,8 +89,9 @@ const QuestionComponent = ({ question, response_type, options = [], onSubmitResp
                     </div>
                 )}
 
-                {response_type === "single_correct" && (
+                {response_type === "single_correct" && Array.isArray(options) && (
                     <div className="single-correct-group">
+
                         <FormControl component="fieldset">
                             <FormLabel component="legend">Select One Option</FormLabel>
                             <RadioGroup

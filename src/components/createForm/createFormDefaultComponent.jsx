@@ -41,11 +41,30 @@ export default function CreateFormDefaultComponent({
         }
     };
 
-    const handlePersonalImageChange = (e) => {
+    const handlePersonalImageChange = async (e) => {
         if (e.target.files && e.target.files[0]) {
-            setPersonalInformationImage(URL.createObjectURL(e.target.files[0]))
+            const file = e.target.files[0];
+            const payload = new FormData();
+            payload.append('question_no', '0');
+            payload.append('folder_id', imageFolderId); // Replace as needed
+            payload.append('page_type', 'personal_information');
+            payload.append('file', file);
+
+            try {
+                const res = await uploadBackgroundImages(payload);
+                setPersonalInformationImage(import.meta.env.VITE_IMAGE_PREFIX + res.path);
+            } catch (error) {
+                // Optionally show a toast here
+                console.error('Image upload failed', error);
+            }
         }
-    }
+    };
+
+    // const handlePersonalImageChange = (e) => {
+    //     if (e.target.files && e.target.files[0]) {
+    //         setPersonalInformationImage(URL.createObjectURL(e.target.files[0]))
+    //     }
+    // }
 
     return (
         <>

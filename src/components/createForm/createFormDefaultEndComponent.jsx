@@ -25,7 +25,7 @@ export default function CreateFormDefaultEndComponent({
             const payload = new FormData();
             payload.append('question_no', '0');
             payload.append('folder_id', imageFolderId); // Replace as needed
-            payload.append('page_type', 'welcome_page');
+            payload.append('page_type', 'thank_you');
             payload.append('file', file);
 
             try {

@@ -75,13 +75,14 @@ export default function Form() {
     return (
         <div className="full-width">
             {formCompletionStatus === "completed" ? (
-                <FormFilledComponent />
+                <FormFilledComponent backgroundImageUrl={formData.background_images.thank_you} />
             ) : ((questionObj && responseId) ? (
                 <QuestionComponent
                     question={questionObj.question}
                     response_type={questionObj.response_type}
                     options={questionObj.options}
                     onSubmitResponse={handleQuestionSubmit}
+                    backgroundImageUrl={questionObj.image}
                 />
             ) : (
                 formData && (!openRespondentInformation ? (
@@ -90,12 +91,14 @@ export default function Form() {
                             title={title}
                             description={description}
                             handleSubmit={() => setOpenRespondentInformation(true)}
+                            backgroundImageUrl={formData.background_images.welcome}
                         />
                     </div>
                 ) : (
                     <RespondentInformationComponent
                         question="May I know your name and ID"
                         onSubmitResponse={handleRespInfoSubmit}
+                        backgroundImageUrl={formData.background_images.personal_information}
                     />
                 ))
             ))}
