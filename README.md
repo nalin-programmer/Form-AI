@@ -7,6 +7,7 @@ A dynamic form builder and analytics platform built with React and Material-UI. 
 - **Dynamic Form Builder:** Create forms with text, single choice (radio), and multiple choice (checkbox) questions.
 - **Image Uploads:** Add background images to forms and individual questions.
 - **Live Preview:** Instantly preview forms as you build them.
+- **AI-Powered Personalization:** Uses AI to personalize questions and make communication more interactive for each respondent.
 - **Response Collection:** Collect and manage responses from users.
 - **Analytics Dashboard:** Visualize response data with interactive bar and pie charts.
 - **User Feedback:** Get instant notifications with MUI Snackbar toasts.
@@ -78,4 +79,16 @@ src/
 
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
-##
+## Screenshots
+
+| Opening Page | Create Form | Multi Correct Question |
+|--------------|-------------|-----------------------|
+| ![OpeningPage](screenshots/OpeningPage.png) | ![CreateForm](screenshots/CreateForm.png) | ![MultiCorrectQuestion](screenshots/MultiCorrectQuestion.png) |
+
+| Single Correct Question | Text Question | View Submissions |
+|------------------------|---------------|------------------|
+| ![SingCorrectQuestion](screenshots/SingCorrectQuestion.png) | ![TextQuestion](screenshots/TextQuestion.png) | ![ViewSubmissions](screenshots/ViewSubmissions.png) |
+
+| Dashboard | Analytics |
+|-----------|-----------|
+| ![Dashboard](screenshots/Dashboard.png) | ![Analytics](screenshots/Analytics.png) |
