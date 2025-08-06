@@ -25,6 +25,41 @@ A dynamic form builder and analytics platform built with React and Material-UI. 
 The backend repository for this project is available at:  
 [https://github.com/nalin-programmer/Form-AI-Backend](https://github.com/nalin-programmer/Form-AI-Backend)
 
+
+## Screenshots
+
+<img src="screenshots/Dashboard.png" alt="Dashboard" width="700"/>
+
+**Dashboard:** Overview of all forms and no of submissions.
+
+<img src="screenshots/CreateForm.png" alt="Create Form" width="700"/>
+
+**Create Form:** Build forms with various question types and add images.
+
+<img src="screenshots/OpeningPage.png" alt="Opening Page" width="700"/>
+
+**Opening Page:** The landing page where users start their form journey.
+
+<img src="screenshots/MultiCorrectQuestion.png" alt="Multi Correct Question" width="700"/>
+
+**Multi Correct Question:** Example of a multiple correct answer question.
+
+<img src="screenshots/SingCorrectQuestion.png" alt="Single Correct Question" width="700"/>
+
+**Single Correct Question:** Example of a single correct answer question.
+
+<img src="screenshots/TextQuestion.png" alt="Text Question" width="700"/>
+
+**Text Question:** Example of a text input question.
+
+<img src="screenshots/ViewSubmissions.png" alt="View Submissions" width="700"/>
+
+**View Submissions:** See all responses submitted for a form.
+
+<img src="screenshots/Analytics.png" alt="Analytics" width="700"/>
+
+**Analytics:** Visualize collected data with interactive charts.
+
 ## Getting Started
 
 ### Prerequisites
@@ -79,36 +114,3 @@ src/
 
 Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
 
-## Screenshots
-
-<img src="screenshots/Dashboard.png" alt="Dashboard" width="700"/>
-
-**Dashboard:** Overview of all forms and no of submissions.
-
-<img src="screenshots/CreateForm.png" alt="Create Form" width="700"/>
-
-**Create Form:** Build forms with various question types and add images.
-
-<img src="screenshots/OpeningPage.png" alt="Opening Page" width="700"/>
-
-**Opening Page:** The landing page where users start their form journey.
-
-<img src="screenshots/MultiCorrectQuestion.png" alt="Multi Correct Question" width="700"/>
-
-**Multi Correct Question:** Example of a multiple correct answer question.
-
-<img src="screenshots/SingCorrectQuestion.png" alt="Single Correct Question" width="700"/>
-
-**Single Correct Question:** Example of a single correct answer question.
-
-<img src="screenshots/TextQuestion.png" alt="Text Question" width="700"/>
-
-**Text Question:** Example of a text input question.
-
-<img src="screenshots/ViewSubmissions.png" alt="View Submissions" width="700"/>
-
-**View Submissions:** See all responses submitted for a form.
-
-<img src="screenshots/Analytics.png" alt="Analytics" width="700"/>
-
-**Analytics:** Visualize collected data with interactive charts.
